@@ -1,59 +1,63 @@
-<!DOCTYPE html>
+<!DOCTYPE<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Happy Valentine's Day!</title>
+    <title>A Special Question ❤️</title>
     <style>
-        body { font-family: 'Arial', sans-serif; background: #fff0f3; color: #d00000; text-align: center; margin: 0; }
-        section { min-height: 100vh; padding: 50px 20px; display: flex; flex-direction: column; justify-content: center; align-items: center; border-bottom: 2px dashed #ffb3c1; }
-        h1 { font-size: 3rem; text-shadow: 2px 2px #ffccd5; }
-        p { font-size: 1.5rem; max-width: 600px; }
-        .heart { font-size: 50px; animation: beat 1s infinite; }
-        @keyframes beat { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.2); } }
-        img { max-width: 80%; border-radius: 20px; box-shadow: 0 10px 20px rgba(0,0,0,0.1); margin: 20px 0; }
+        body { font-family: 'Arial', sans-serif; background: #fff0f3; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; overflow: hidden; }
+        .container { text-align: center; padding: 20px; background: white; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); width: 90%; max-width: 400px; position: relative; }
+        h1 { color: #d00000; font-size: 2rem; margin-bottom: 30px; }
+        .buttons { display: flex; justify-content: space-around; gap: 20px; margin-top: 20px; }
+        button { padding: 15px 30px; font-size: 1.2rem; border: none; border-radius: 10px; cursor: pointer; transition: 0.3s; font-weight: bold; }
+        #yesBtn { background-color: #ff4d6d; color: white; }
+        #noBtn { background-color: #888; color: white; position: absolute; }
+        .success-page { display: none; text-align: center; animation: fadeIn 1.5s; }
+        p { font-size: 1.1rem; line-height: 1.6; color: #555; }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
     </style>
 </head>
 <body>
 
-    <section>
-        <div class="heart">❤️</div>
-        <h1>Happy Valentine's Day, [vaishnavi biaht]!</h1>
-        <p>Yeh chhota sa surprise Aapke liye mahi ki mummy...</p>
-        <p>Scroll down karo mahi ki mmy ↓</p>
-    </section>
+    <div class="container" id="mainContainer">
+        <div id="questionPage">
+            <h1 id="questionText">Will you be my wife? 💍</h1>
+            <div class="buttons">
+                <button id="yesBtn" onclick="showSuccess()">Yes</button>
+                <button id="noBtn" onmouseover="moveButton()" onclick="moveButton()">No</button>
+            </div>
+        </div>
 
-    <section>
-        <h1>Our Story 📖</h1>
-        <p>hum ek gc me Mile the uder main admin ko gaali deke leave maar rha tha ussi Time tu aagyi Tune bola gaali kyuu de rhe ho Maine bola flw back do Bata ta hu tune Flw back diya uske 1-2hafte baad humne baatchit kri fir tune apna intro diya fir hum dost bane uske baad Soch rha thw main propose krdu terko fir tune Lakshay ke baate me bata diya dil tut gya mera fir socha Chhod dost hii bann jate haii fir Tabiyat ki maa bhen rk hogyi Tujhe baat nhii kr pa rha tha fir Sidd ne Terko iman ke gc me add kra uder humari baat st hogyi firse sidd dallw bolne laga bhen bana le warna Lakshay block krde ga iski acc se fir dil pe hath rakh kr bhen banaya.Lakshay gc me add Hogya fir Uski maa chod di maine tera breakup hogya fir yayayaya uske baad tu Mere sath flirt krti thi Maine Tujhe book kr rakhw hai in sab ke baad Hum aagye reln me and last i love you so much mahi ki mmy..</p>
-    </section>
+        <div id="successPage" class="success-page">
+            <h1 style="font-size: 2.5rem;">YAYYY! ❤️🥳</h1>
+            <p>
+                <b>Meri pyaari [Name],</b><br><br>
+                Yahan se aapka paragraph shuru hota hai. Tum meri zindagi ki sabse badi khushi ho.
+                Hum jab mile the tab se lekar aaj tak, har pal tumhare saath special raha hai. 
+                Main waada karta hoon ki hamesha tumhara saath dunga aur tumhe khush rakhunga.
+                I love you forever! ❤️
+            </p>
+            <div style="font-size: 50px;">💍✨</div>
+        </div>
+    </div>
 
-    <section>
-        <h1>Why I Love You ✨</h1>
-        <p>1. Teri smile yrr Kitni Achi haii tera behaviour tere baal kash touch kr sakta un ko teri aankhe and last tu Merse Bohot pyar krti haii..</p>
-    </section>
+    <script>
+        function moveButton() {
+            const noBtn = document.getElementById('noBtn');
+            // Button ko screen ke andar hi randomly move karne ke liye
+            const x = Math.random() * (window.innerWidth - noBtn.offsetWidth);
+            const y = Math.random() * (window.innerHeight - noBtn.offsetHeight);
+            
+            noBtn.style.left = x + 'px';
+            noBtn.style.top = y + 'px';
+        }
 
-    <section>
-        <h1>Our Memories 📸</h1>
-        <p>(tere sath meri Bohot achi achi memory hai Par sabse achi Woh wali hai jab hum dono ne late night talks ki thi)</p>
-    </section>
-
-    <section>
-        <h1>Our Song 🎵</h1>
-        <p>wanna be yours.</p>ir
-    </section>
-
-    <section>
-        <h1>Future Goals ✈️</h1>
-        <p>jayda kuch nhii bas tere mahi Pranav ke sath life spend krni haii!</p>
-    </section>
-
-    <section>
-        <h1>I Love You Forever ❤️</h1>
-        <p>Hamesha mere saath rehna. babyyyy tuu hii meri duniya haii (cringe Lag rha hai)i Love you so much mahi ki mmu .</p>
-        <div class="heart">💖</div>
-    </section>
-
+        function showSuccess() {
+            document.getElementById('questionPage').style.display = 'none';
+            document.getElementById('successPage').style.display = 'block';
+            document.getElementById('mainContainer').style.backgroundColor = '#fff';
+            // Pura paragraph wala screen
+        }
+    </script>
 </body>
 </html>
-rha
